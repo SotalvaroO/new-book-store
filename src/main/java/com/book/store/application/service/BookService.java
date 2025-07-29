@@ -1,11 +1,10 @@
 package com.book.store.application.service;
 
+import java.util.List;
+
 import com.book.store.application.dto.BookResponse;
 import com.book.store.application.dto.CreateBook;
 import com.book.store.application.dto.UpdateBook;
-import org.springframework.http.ResponseEntity;
-
-import java.util.List;
 
 public interface BookService {
     List<BookResponse> findAllBooks();

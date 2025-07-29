@@ -1,8 +1,9 @@
 package com.book.store.infrastructure.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.book.store.domain.entity.Book;
 import com.book.store.infrastructure.entity.BookEntity;
-import org.springframework.stereotype.Component;
 
 @Component
 public class BookInfraMapper {

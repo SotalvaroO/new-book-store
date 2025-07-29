@@ -1,0 +1,21 @@
+services:
+  book-db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: book-db
+      POSTGRES_USER: bookuser
+      POSTGRES_PASSWORD: bookpass
+
+
+  app:
+    build: .
+    depends_on:
+      - book-db
+    environment:
+      DATABASE_URL: jdbc:postgresql://book-db:5432/book-db
+      DATABASE_USERNAME: bookuser
+      DATABASE_PASSWORD: bookpass
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+

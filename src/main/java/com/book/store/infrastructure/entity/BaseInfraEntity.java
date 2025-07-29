@@ -1,9 +1,8 @@
 package com.book.store.infrastructure.entity;
 
-import com.book.store.domain.entity.BaseEntity;
-import lombok.Getter;
-
 import java.util.Objects;
+
+import lombok.Getter;
 
 @Getter
 public class BaseInfraEntity<ID> {
@@ -16,8 +15,10 @@ public class BaseInfraEntity<ID> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof BaseInfraEntity<?> that)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof BaseInfraEntity<?> that))
+            return false;
         return Objects.equals(id, that.id);
     }
 

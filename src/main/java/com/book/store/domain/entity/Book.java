@@ -1,13 +1,12 @@
 package com.book.store.domain.entity;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 public class Book extends BaseEntity<UUID> {
     private String title;
     private String author;
     private String isbn;
-    private LocalDate publicationYear;
+    private Integer publicationYear;
 
     private Book(Builder builder) {
         super.setId(builder.id);
@@ -29,7 +28,7 @@ public class Book extends BaseEntity<UUID> {
         return isbn;
     }
 
-    public LocalDate getPublicationYear() {
+    public Integer getPublicationYear() {
         return publicationYear;
     }
 
@@ -45,7 +44,7 @@ public class Book extends BaseEntity<UUID> {
         this.isbn = isbn;
     }
 
-    public void setPublicationYear(LocalDate publicationYear) {
+    public void setPublicationYear(Integer publicationYear) {
         this.publicationYear = publicationYear;
     }
 
@@ -57,13 +56,12 @@ public class Book extends BaseEntity<UUID> {
         setId(UUID.randomUUID());
     }
 
-
     public static final class Builder {
         private UUID id;
         private String title;
         private String author;
         private String isbn;
-        private LocalDate publicationYear;
+        private Integer publicationYear;
 
         private Builder() {
         }
@@ -88,7 +86,7 @@ public class Book extends BaseEntity<UUID> {
             return this;
         }
 
-        public Builder publicationYear(LocalDate val) {
+        public Builder publicationYear(Integer val) {
             publicationYear = val;
             return this;
         }

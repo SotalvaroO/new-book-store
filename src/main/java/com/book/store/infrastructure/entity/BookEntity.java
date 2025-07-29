@@ -1,13 +1,16 @@
 package com.book.store.infrastructure.entity;
 
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.*;
-
-import java.time.LocalDate;
-import java.util.UUID;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -26,5 +29,5 @@ public class BookEntity {
     @Column(nullable = false, length = 150)
     private String author;
     @Column(name = "publication_year", nullable = true)
-    private LocalDate publicationYear;
+    private Integer publicationYear;
 }
